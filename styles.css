@@ -4,7 +4,13 @@ body {
   font-family: 'Press Start 2P', cursive;
   text-align: center;
   color: #fff;
+  margin: 0;
 }
+
+p {
+  font-size: 1rem;
+}
+
 
 /* containers */
 .bg-img {
@@ -28,7 +34,7 @@ body {
   background: #111845a6;
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgb(23, 32, 90);
-  padding: 20px;
+  padding: 10px;
   line-height: 2;
   text-align: justify;
   border: solid 0.5rem;
@@ -42,13 +48,12 @@ body {
  }
 }
 
-
-
 .games-col {
   padding-right: 30px;
   padding-left: 30px;
 
 }
+
 
 /* rules section */
 .sub-title {
@@ -75,4 +80,27 @@ body {
 
 .big-heading {
   margin-bottom: 35px;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+
+/* footer */
+.acknowledgement {
+  font-size: 0.5rem;
+  color: grey;
 }
