@@ -16,9 +16,11 @@ p {
 .bg-img {
   background-image: url("images/background.jpg");
   height: 100%;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-color: #0d0a19;
 }
 .main-container {
   padding: 4rem;
@@ -54,10 +56,15 @@ p {
 
 }
 
+.mobile-header {
+  display: none;
+}
+
 
 /* rules section */
 .sub-title {
   padding-bottom: 20px;
+  color: crimson;
 }
 
 .rule-list {
@@ -74,12 +81,13 @@ p {
   width: 10rem;
   height: 10rem;
   border-radius: 2rem;
-  margin: 1.2rem;
+  margin: 1.2rem 0.9rem;
   border: solid 0.5rem #00ffe9;
   }
 
 .big-heading {
   margin-bottom: 35px;
+  color: greenyellow;
 }
 
 .red {
@@ -103,4 +111,47 @@ p {
 .acknowledgement {
   font-size: 0.5rem;
   color: grey;
+}
+
+/* media queries */
+@media only screen and (max-width: 700px) {
+
+  .mobile-header {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: darkorange;
+  }
+
+  .bg-img {
+    background-image: url("images/bg-mobile.jpg");
+  }
+
+  .main-container {
+    padding: 2.25rem;
+  }
+
+  .sub-title {
+    font-size: 1.5rem;
+  }
+
+  .rule-list {
+    font-size: 0.82rem;
+    text-align: right;
+  }
+
+  .rules-col {
+    margin-bottom: 3rem;
+  }
+
+  .big-heading {
+    font-size: 1.5rem;
+  }
+
+  .game-btns {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.5rem;
+    margin: 0.8rem 0.2rem;
+  }
 }
