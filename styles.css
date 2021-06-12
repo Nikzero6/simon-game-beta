@@ -23,7 +23,7 @@ p {
   background-color: #0d0a19;
 }
 .main-container {
-  padding: 4rem;
+  padding: 2.5rem 4rem;
 }
 
 @property --angle {
@@ -36,7 +36,7 @@ p {
   background: #111845a6;
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgb(23, 32, 90);
-  padding: 10px;
+  padding: 20px;
   line-height: 2;
   text-align: justify;
   border: solid 0.5rem;
@@ -72,6 +72,7 @@ p {
   color:#00ffe9
 }
 
+
 /* game section */
 .game-col {
   padding: 15px 30px;
@@ -88,6 +89,7 @@ p {
 .big-heading {
   margin-bottom: 35px;
   color: greenyellow;
+  line-height: 1.5;
 }
 
 .red {
@@ -112,6 +114,7 @@ p {
   font-size: 0.5rem;
   color: grey;
 }
+
 
 /* media queries */
 @media only screen and (max-width: 700px) {
