@@ -1,0 +1,78 @@
+
+/* elements */
+body {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: #fff;
+}
+
+/* containers */
+.bg-img {
+  background-image: url("images/background.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-container {
+  padding: 4rem;
+}
+
+@property --angle {
+ syntax: '<angle>';
+ initial-value: 0deg;
+ inherits: false;
+}
+
+.rules-col {
+  background: #111845a6;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  padding: 20px;
+  line-height: 2;
+  text-align: justify;
+  border: solid 0.5rem;
+  border-image: linear-gradient(var(--angle), turquoise, #fd1d1d, greenyellow) 1;
+  animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+ to {
+   --angle: 360deg;
+ }
+}
+
+
+
+.games-col {
+  padding-right: 30px;
+  padding-left: 30px;
+
+}
+
+/* rules section */
+.sub-title {
+  padding-bottom: 20px;
+}
+
+.rule-list {
+  padding-bottom: 10px;
+  color:#00ffe9
+}
+
+/* game section */
+.game-col {
+  padding: 15px 30px;
+}
+
+.game-btns {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 2rem;
+  margin: 1.2rem;
+  border: solid 0.5rem #00ffe9;
+  }
+
+.big-heading {
+  margin-bottom: 35px;
+}
