@@ -22,11 +22,21 @@
   </head>
 
 
-  <body class="bg-img">
+  <body class="bg-img" onclick="playbgm()">
 
-    <div class="main-container" onmouseover="playMusic()">
+    <!-- bgm -->
+    <audio id="divAudio" loop>
+      <source src="sounds/bgm.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="main-container">
 
       <h1 class="mobile-header">Simon's Game</h1>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
 
       <div class="row">
         <div class="col-lg-4 rules-col">
@@ -51,17 +61,6 @@
       </div>
     </div>
 
-    <!-- bgm -->
-    <audio id="divAudio">
-      <source src="sounds/bgm.mp3" type="audio/mp3">
-    </audio>
-    <script>
-       var vAudio = document.getElementById("divAudio");
-       function playMusic() {
-        vAudio.play();
-       }
-    </script>
-
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="index.js" charset="utf-8"></script>
@@ -72,4 +71,5 @@
     <p>Made by <a href="https://github.com/Nikzero6">Nikhil Rai</a></p>
     <a href='https://www.freepik.com/vectors/banner' class="acknowledgement">Banner vector created by starline - www.freepik.com</a>
   </footer>
+
 </html>
