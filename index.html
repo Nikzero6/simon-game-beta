@@ -24,7 +24,7 @@
 
   <body class="bg-img">
 
-    <div class="main-container">
+    <div class="main-container" onmouseover="playMusic()">
 
       <h1 class="mobile-header">Simon's Game</h1>
 
@@ -50,6 +50,17 @@
 
       </div>
     </div>
+
+    <!-- bgm -->
+    <audio id="divAudio">
+      <source src="sounds/bgm.mp3" type="audio/mp3">
+    </audio>
+    <script>
+       var vAudio = document.getElementById("divAudio");
+       function playMusic() {
+        vAudio.play();
+       }
+    </script>
 
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
