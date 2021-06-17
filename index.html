@@ -22,19 +22,27 @@
   </head>
 
 
-  <body class="bg-img" onclick="playbgm()">
+  <body class="bg-img">
 
     <!-- bgm -->
-    <audio id="divAudio" loop>
+    <audio id="bgmAudio" loop>
       <source src="sounds/bgm.mp3" type="audio/mp3">
     </audio>
 
+    <!-- button-sounds -->
+    <audio src="sounds/red.mp3" id="audio0"></audio>
+    <audio src="sounds/yellow.wav" id="audio1"></audio>
+    <audio src="sounds/green.mp3" id="audio2"></audio>
+    <audio src="sounds/blue.mp3" id="audio3"></audio>
+
+    <!-- website -->
     <div class="main-container">
 
       <h1 class="mobile-header">Simon's Game</h1>
 
-      <label class="switch">
-        <input type="checkbox">
+      <label class="switch" onclick="playbgm()">
+        <span class="sound-label">Sound:</span>
+        <input type="checkbox" id="sound-check">
         <span class="slider round"></span>
       </label>
 
