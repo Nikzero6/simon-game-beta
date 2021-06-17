@@ -10,10 +10,25 @@ function playbgm() {
   }
 }
 
+//btn click
+var player = "NoPLayer"
+var computerPress = [];
+var humanPress = [];
+var level = 1;
+
 $(".game-btns").click(function() {
-  var clikedBtnIndex = $(".game-btns").index(this);
-  btnSound(clikedBtnIndex);
+  var clickedBtnIndex = $(".game-btns").index(this);
+  btnSound(clickedBtnIndex);
+
+  if(player == "computer") {
+    computerPress.push(clickedBtnIndex);
+  }
+  else if(player == "human") {
+    humanPress.push(clickedBtnIndex);
+    checkClick(computerPress, humanPress, level);  //checkClick
+    }
 });
+
 
 //button-Sound
 function btnSound(index) {
@@ -21,61 +36,82 @@ function btnSound(index) {
   btnAudio.play();
 }
 
-//game
+
+//global variables
+
+//gameStart
 $(document).keypress(function() {
-  for (var i = 0, j = 1; i < j; i++)
-  {
-    //random game
-    for(var i=0; i<j; i++)
-    {
-      //title change
-      $(".big-heading").text("Level "+j);
-
-      setTimeout(function game() {
-        var randomNum = Math.floor(Math.random()*4); //0-3
-        btnPlay(randomNum);
-        // if(checkClick(randomNum)==false) {
-        //   break;
-        // }
-        // else {
-        //   j++
-        // }
-      }, 1000);
-    }
-  }
-  // gameOver();
-  });
-
-//check Click
-function checkClick(num) {
-  $("button").click(function() {
-    var clikedBtnIndex = $("button").index(this);
-    if(clickedBtnIndex == num) {
-      return true;
-    }
-    else {
-      return false;
-    }
-  });
-}
-
-//gameOver function
-function gameOver() {
-  setTimeout(function() {
-    $("body").css("background-color", "red");
-    $(".big-heading").text("GAMEOVER!");
-  }, 10000);
-
-  location.reload();
-}
+  game(level);
+});
 
 //game function
+function game(level) {
+
+  //title change
+  $(".big-heading").text("Level "+level);
+
+  //random game
+  var randomNum = 0;
+
+  player = "computer";
+
+  var i=1;
+  var handle = setInterval( function() {
+
+    randomNum = Math.floor(Math.random()*4); //0-3
+    btnPlay(randomNum);
+    computerPress.push(randomNum);
+    console.log(computerPress[i-1]);
+    i++;
+
+    if (i>level) clearInterval(handle);
+
+  }, 800 );
+
+
+  player = "human";
+  //record click
+
+}
 
 //btn play
 function btnPlay(num) {
   btnSound(num);
   $($("button")[num]).addClass("btn-click");
   setTimeout(function() {
-        $($("button")[num]).removeClass("btn-click");
-      }, 800);
+    $($("button")[num]).removeClass("btn-click");
+  }, 500);
+}
+
+//check Click
+function checkClick(computerPress, humanPress, num) {
+
+  if(humanPress.length < computerPress.length) {
+    for(var i=0; i<humanPress.length; i++) {
+      if(computerPress[i] != humanPress[i]) {
+        gameOver(level);
+      }
+    }
+  }
+  else {
+    if(computerPress[num-1] != humanPress[num-1]) {
+        gameOver(level);
+    }
+    else {
+      level++;
+      setTimeout(function() {
+        game(level);
+      }, 1000);
+    }
+  }
+}
+
+//gameOver function
+function gameOver(num) {
+  $(".main-container").css("background-color", "red");
+  $(".big-heading").html("GAMEOVER!<br>SCORE: "+num*100);
+
+  setTimeout(function() {
+    location.reload();
+  }, 5000);
 }
