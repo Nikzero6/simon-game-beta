@@ -61,6 +61,10 @@ p {
   display: none;
 }
 
+.mob-heading {
+  display: none;
+}
+
 /* switch */
 .switch {
   position: relative;
@@ -203,6 +207,7 @@ input:checked + .slider:before {
     color: darkorange;
   }
 
+
   .bg-img {
     background-image: url("images/bg-mobile.jpg");
   }
@@ -225,7 +230,29 @@ input:checked + .slider:before {
   }
 
   .big-heading {
+    display: none;
+  }
+
+  .mob-heading {
+    display: block;
     font-size: 1.5rem;
+    margin-bottom: 35px;
+    color: greenyellow;
+    line-height: 1.5;
+  }
+
+  .clickMe {
+    color: red;
+    font-size: 1.8rem;
+  }
+
+  .clickMe:hover {
+    color: yellow;
+    box-shadow: 2px;
+  }
+
+  .clickMe:active {
+    color: white;
   }
 
   .game-btns {
