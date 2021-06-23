@@ -7,7 +7,7 @@ Snippet from game:
 ![Game Snippet](/images/image.png)
 
 ## Styling
-- Used Bootsrap and @media queries for a responsive web design.
+- Used Bootstrap and @media queries for a responsive web design.
 - Animated border:
   - Used conic-gradient with three colors for border image.
   - animated different @keyframes by defining the @property rule for angle and varying it from 0 to 360 degrees.
